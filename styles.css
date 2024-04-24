@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap');
+
+:root {
+    --black-color: black;
+    --white-color: white;
+    --red-color: oklch(40.1% 0.123 21.57);
+    --grey-color: rgb(62, 62, 62);
+    --orange-color: oklch(59.69% 0.156 49.77);
+}
+
+body {
+    margin: 0;
+    font-family: "Lexend Exa", sans-serif;
+    font-size: 16px;
+}
+
+header,
+footer{
+    color: var(--white-color);
+    background-color: var(--black-color);
+    padding: 3vw 15vw;
+}
+
+main {
+    padding: 5vh 15vw 10vw;
+}
+
+footer {
+    font-size: 0.8rem;
+}
+
+h1 {
+    color: var(--white-color);
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+h2 {
+    color: var(--red-color);
+    margin-top: 4rem;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+    color: var(--grey-color);
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+}
+
+h5 {
+    color: var(--black-color);
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin: 0 0 1rem 0;
+}
+
+h4:has(+ h5) {
+    margin: 0 0 0.25rem 0;
+}
+
+p, ul, time {
+    font-weight: 200;
+}
+
+ul {
+    margin-bottom: 2rem;
+    line-height: 2rem;
+}
+
+li {
+    list-style-position: inside;
+}
+
+pre {
+    color: var(--red-color);
+    font-weight: 500;
+}
+
+.header-sommaire {
+    font-size: 1.3rem;
+    margin-bottom: 5rem;
+}
+
+.style-imbrique {
+    font-weight: 500;
+    & > a {
+        color: darkred;
+        &:hover,
+        &:focus {
+            color: white;
+            font-weight: 900;
+            background-color: darkred;
+        }
+    }
+}
+
+.bloc {
+    font-size: 0.65rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+
+.bloc1 {
+    width: 130px;
+    height: 130px;
+    padding: 1rem;
+    color: var(--white-color);
+    background-color: oklch(40.1% 0.123 21.57);
+}
+
+.bloc2 {
+    width: 130px;
+    height: 130px;
+    padding: 1rem;
+    color: var(--white-color);
+    background-color: oklch(59.69% 0.156 49.77);
+}
+
+.bloc3 {
+    width: 130px;
+    height: 130px;
+    padding: 1rem;
+    background-color: oklch(59.69% 0.156 49.77 / .5);
+}
+
+.text-wrap {
+    hyphens: auto;
+    width: 80%;
+}
+
+.balance-pretty {
+    text-wrap: balance;
+    text-wrap: pretty;
+}
+
+.histoire {
+    font-family: "Kalnia", serif;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--red-color);
+
+    &::first-letter {
+        initial-letter: 4 3;
+        font-weight: 900;
+        padding-right: 1rem;
+        background: linear-gradient(to right, var(--red-color), var(--orange-color));
+        color: transparent;
+        -webkit-background-clip: text;
+    }
+}
+
+/*.style-imbrique {
+    font-weight: 500;
+}
+
+.style-imbrique-old > a:hover,
+.style-imbrique-old > a:hover {
+    color:green;
+    color: white;
+    font-weight: 900;
+    background-color: green;
+}*/

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./app.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Nouveauté CSS 3</title>
+</head>
+<body>
+    <header>
+        <h1>NOUVEAUTÉ CSS3</h1>
+        <p class="header-sommaire">Voici 5 nouvelles fonctionnalités qui proviennent de CSS3 et qui peuvent améliorer le rendu de nos pages Web!</p>
+    </header>
+    <main>
+        <section class="nesting">
+            <h2>UTILISATION DE & DANS DES STYLES IMBRIQUÉS (CSS NESTING)</h2>
+            <h3>Avantages</h3>
+            <p>L'imbrication des styles diminue les doublons, économise de l'espace, aide à la lisibilité et à la maintenance du CSS.</p>
+            <ul>Ces deux déclarations donnent ce même résultat : 
+                <p class="style-imbrique">Vous trouverez ici le lien vers le site de <a href="https://www.google.ca/?hl=fr" target="_blank">Google</a>.</p>
+                <li>Voici la façon classique de le déclarer : 
+                    <pre>
+.style-imbrique {
+    font-weight: 500;
+}
+                    
+.style-imbrique > a:hover,
+.style-imbrique > a:hover {
+    color:green;
+    color: white;
+    font-weight: 900;
+    background-color: green;
+}</pre>
+                </li>
+                <li>Voici la nouvelle méthode qui utilise le " & " sélecteur d'imbrication :
+                    <pre>
+.style-imbrique {
+    font-weight: 500;
+    & > a {
+        color:green;
+        &:hover,
+        &:focus {
+            color: white;
+            font-weight: 900;
+            background-color: green;
+        }
+    }
+}</pre>
+                </li>
+            </ul>
+        </section class="has">
+        <h2>PSEUDO-CLASSE :HAS</h2>
+        <h3>Avantages</h3>
+        <p>Le :has aide à mettre en forme de manière plus précise et conditionnelle au moins un élément qui fait partie d'un groupe d'éléments préalablement ciblés en CSS.</p>
+        <p>Ici, on s'assure que le h4 a une marge de dessous plus petite s'il a un h5 directement sous lui. Sinon, cette marge a même pour h4 et h5.</p>
+        <pre>
+h4 {
+    color: var(--grey-color);
+    font-size: 1rem;
+    margin: 0 0 1rem 0;
+}
+
+h5 {
+    color: var(--black-color);
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin: 0 0 1rem 0;
+}
+
+h4:has(+ h5) {
+    margin: 0 0 0.25rem 0;
+}
+        </pre>
+        <h4>Virelangues en A</h4>
+        <p>Natacha n’attacha pas son chat Pacha qui s’échappa. Cela fâcha Sacha qui chassa Natacha.</p>
+        <h4>Virelangue en B</h4>
+        <h5>Pas facile celui-là!</h5>
+        <p>Babylas baladin emballe bonnement des balles tandis que Babette ballerine étoile du corps de ballet se balance mollement sur le bout d’une barre de bois.</p>
+        <section class="oklch">
+            <h2>COULEURS OKLCH</h2>
+            <h3>Avantages</h3>
+            <p>Cette palette de couleurs possède presque le double des couleurs de RGB et offre plus de possibilités.</p>
+            <ul>Voici le détail des arguments :
+                <li>1er argument : Luminosité entre 0% et 100 %</li>
+                <li>2e argument : Le chroma ou la quantité de couleur</li>
+                <li>3e argument : Angle de la teinte</li>
+                <li>4e argument : Opacité entre 0 et 1 (optionnel)</li>
+            </ul>
+            <div class="bloc">
+                <div class="bloc1">40.1 % 0.123 21.57</div>
+                <div class="bloc2">59.69% 0.156 49.77</div>
+                <div class="bloc3">59.69% 0.156 49.77/.5</div>
+            </div>
+        </section>
+        <section class="text-wrap">
+            <h2>TECHNIQUES DE RENVOI À LA LIGNE DU TEXTE (TEXT-WRAP) : BALANCE ET PRETTY</h2>
+            <h3>Avantages</h3>
+            <p>Ces fonctionnalités aident à créer des blocs de texte agréables à l'oeil, évitent les orphelins et balancent la répartition des traits d'union. L'effet peut paraître subtil, mais il semble que c'est un bon choix pour s'assurer que nos textes, une fois traduits dans les différents navigateurs, soient équilibrés.</p>
+            <p>Voici la déclaration CSS pour l'exemple avec ces techniques :</p>
+            <pre>
+.balance-pretty {
+    text-wrap: balance;
+    text-wrap: pretty;
+}
+            </pre>
+
+            <p>Voici des exemples sans ces techniques :</p>
+            <h4>Cras in lorem sit amet justo rutrum egestas in et purus</h4>
+            <p>Cras egestas fermentum ante, quis vulputate leo molestie blandit. Suspendisse elementum elit id magna molestie, ut lobortis metus ornare. Curabitur ac tellus eget nisl semper elementum. Donec vel massa ut ipsum elementum ultrices. Pellentesque auctor, nunc at congue ornare, erat erat porttitor mauris, sit amet tincidunt orci quam non tortor. Sed leo leo, dapibus eget dui at, sodales imperdiet augue.</p>
+            <h4>Ut nec mauris urna.</h4>
+            <p>Mauris blandit nulla libero, vitae convallis lorem egestas sit amet. Aenean elementum mollis cursus. Nam orci leo, faucibus nec felis a, sollicitudin pharetra tortor. Nunc elementum ex hendrerit lectus egestas cursus. Curabitur metus mauris, cursus id finibus ac, suscipit vel dolor. Aenean convallis tristique ante, sed ultrices odio pretium egestas. Vivamus turpis odio, laoreet eget augue a, sagittis porttitor ante.</p>
+            <p>Voici des exemples avec ces techniques :</p>
+            <h4 class="balance-pretty">Cras in lorem sit amet justo rutrum egestas in et purus</h4>
+            <p class="balance-pretty">Cras egestas fermentum ante, quis vulputate leo molestie blandit. Suspendisse elementum elit id magna molestie, ut lobortis metus ornare. Curabitur ac tellus eget nisl semper elementum. Donec vel massa ut ipsum elementum ultrices. Pellentesque auctor, nunc at congue ornare, erat erat porttitor mauris, sit amet tincidunt orci quam non tortor. Sed leo leo, dapibus eget dui at, sodales imperdiet augue.</p>
+            <h4>Ut nec mauris urna.</h4>
+            <p>Mauris blandit nulla libero, vitae convallis lorem egestas sit amet. Aenean elementum mollis cursus. Nam orci leo, faucibus nec felis a, sollicitudin pharetra tortor. Nunc elementum ex hendrerit lectus egestas cursus. Curabitur metus mauris, cursus id finibus ac, suscipit vel dolor. Aenean convallis tristique ante, sed ultrices odio pretium egestas. Vivamus turpis odio, laoreet eget augue a, sagittis porttitor ante.</p>
+        </section>
+        <section class="initial-letter">
+            <h2>LETTRINE (INITIAL-LETTER)</h2>
+            <h3>Avantages</h3>
+            <p>Cette option imbriquée toute simple, mais très esthétique permet le positionnement et l'adaptation rapide et d'une lettrine en début de phrase à l'aide de deux arguments : le premier marque la profondeur de la lettre dans le paragraphe et le second, la hauteur par rapport aux lignes du paragraphe.</p>
+            <p>Voici la déclaration du texte qui suit :</p>
+            <pre>
+.histoire {
+    font-family: "Kalnia", serif;
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: var(--red-color);
+
+    &::first-letter {
+        initial-letter: 4 3;
+        font-weight: 900;
+        padding-right: 1rem;
+        background: linear-gradient(to right, var(--red-color), var(--orange-color));
+        color: transparent;
+        -webkit-background-clip: text;
+    }
+}
+            </pre>
+            <p class="histoire">Mauris aliquam ultrices tincidunt.Fusce mollis elementum ligula ut tincidunt. Ut blandit mauris mattis lorem bibendum, rhoncus viverra sem auctor. Nam id scelerisque risus. Proin auctor hendrerit gravida. Fusce condimentum est in facilisis bibendum. Donec a mauris mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer mollis erat ut elit tempor, at congue enim mattis. Quisque egestas gravida ligula, vitae blandit mi rutrum sed. Donec sit amet pharetra tortor, sit amet consequat nulla. Integer non lectus magna. Fusce maximus ultrices ex at mollis. Pellentesque vitae posuere est. Integer eu leo tellus.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Eve Cloutier</p>
+        <p>PMI<p>
+        </p><time datetime="2024-04-23">23 avril 2024</time></p>
+        <p>https://www.laculturegenerale.com/virelangues-phrases-difficiles-a-prononcer-liste/
+            https://developer.chrome.com/blog/css-wrapped-2023?hl=fr#select-live-demo
+            https://www.alsacreations.com/article/lire/1924-css-has-selecteur-parent.html#:~:text=%3Ahas()%20est%20un%20s%C3%A9lecteur,permet%20aujourd'hui%20de%20r%C3%A9soudre.
+            https://guillaumedaavid.medium.com/toutes-les-nouveaut%C3%A9s-de-css-pour-bien-commencer-2024-c2afdf452d5d
+
+        </p>
+    </footer>
+</body>
+</html>
